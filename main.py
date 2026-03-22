@@ -26,7 +26,7 @@ def keep_alive():
     import time, urllib.request
     while True:
         try:
-            urllib.request.urlopen("https://TU-OPORTUNIDADES-APP.onrender.com/")
+            urllib.request.urlopen("https://oportunidades-web3.onrender.com/")
         except:
             pass
         time.sleep(840)
@@ -73,7 +73,7 @@ async def generate_oportunidades(request: Request):
         "expires": datetime.utcnow() + timedelta(hours=SESSION_TTL_HOURS),
     }
 
-    BASE_URL = "https://TU-OPORTUNIDADES-APP.onrender.com"
+    BASE_URL = "https://oportunidades-web3.onrender.com"
     view_url = f"{BASE_URL}/view/{session_id}"
     return JSONResponse({"success": True, "view_url": view_url, "message": f"Mapa listo: {view_url}"})
 
